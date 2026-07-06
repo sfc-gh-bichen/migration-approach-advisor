@@ -48,12 +48,12 @@ Or just describe what you need — Cortex Code will route automatically on phras
 ### Example
 
 **Prompt:**
-> I'm working with Ariat, a retail company migrating from BigQuery + SQL Server to Snowflake. They have 161 BQ tables (126 are GA4 wildcard date-partitioned), 27 stored procedures (4 high-complexity with UNNEST + dynamic SQL), and a Cloud Function orchestrating 10 SP calls. Their team has low Snowflake maturity. They want to go live in ~8 weeks on the CDP workload. Recommend migration approaches.
+> A retail company is migrating from BigQuery to Snowflake. They have 160 BQ tables (many are GA4 wildcard date-partitioned), 25 stored procedures (4 high-complexity with UNNEST + dynamic SQL), and a Cloud Function orchestrating SP calls. Their team has low Snowflake maturity and a hard 8-week go-live target. Recommend migration approaches.
 
 **What the skill produces:**
 - `workspace/signals.json` — extracted complexity, volume, team, timeline signals
 - `workspace/approach-scores.json` — ranked A/B/C with per-dimension effort/risk
-- `workspace/recommendation-memo.md` — ranked options with rationale (likely B #1: convert DDL with SnowConvert, CoCo for the 4 high-complexity procs, Task DAG for Cloud Function)
+- `workspace/recommendation-memo.md` — ranked options with rationale (likely B #1: convert DDL with SnowConvert, CoCo for high-complexity procs, Task DAG for orchestration)
 - Google Slides exec deck
 
 ## Scripts
